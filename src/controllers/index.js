@@ -3,18 +3,24 @@ const model2 = require('./../models/products');
 
 
 module.exports = {
-    find: (req, res) => {
+    find: async (req, res) => {
         collection = req.baseUrl; // /category, /products, etc
         query = req.params.query;
         console.log(collection);
         if (collection == "/category") {
-            model1.find(query).lean().then(response => {
+            query = {};
+            await model1.find(query).lean().then(response => {
+                console.log(response)
                 res.send(response)
-            }).catch();
+            }).catch(error => {
+                console.error(error);
+            });
         } else if (collection == "/products") {
-            model2.find(query).lean().then(response => {
+            await model2.find(query).lean().then(response => {
                 res.send(response)
-            }).catch();
+            }).catch(error => {
+                console.error(error);
+            });
         } else {
             res.status(500).send('Not a valid URL path!')
         }
