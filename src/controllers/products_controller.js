@@ -1,9 +1,10 @@
 const model = require('../models/products'); // Import the product model
 
 module.exports = {
-    find: async (req, res) => {
-        const collection = req.baseUrl; // /category, /products, etc
-        const query = req.query;
+
+    GetProducts: async (req, res) => {
+        collection = req.baseUrl; // /category, /products, etc
+        query = req.query;
         console.log(collection);
         await model.find(query).lean().then(response => {
             res.send(response);
@@ -13,14 +14,26 @@ module.exports = {
         });
     },
 
-    find_one: async (req, res) => {
-        collection = req.baseUrl; // /category, /products, etc
-        query = req.query;
-        await model.findOne(query).lean().then(response => {
-            res.send(response);
+    GetProduct: async (req, res) => {
+        id = req.query.id;
+        await model2.findOne({
+            _id: id
+        }).lean().then(response => {
+            res.send(response)
         }).catch(error => {
             console.error(error);
-            res.status(500).send('Error while fetching data!');
+            res.status(500).send('Not a valid id!')
+        });
+    },
+    DeleteProduct: async (req, res) => {
+        let id = req.body.id;
+        await model2.findByIdAndDelete({
+            _id: id
+        }).lean().then(response => {
+            res.send(response)
+        }).catch(error => {
+            console.error(error);
+            res.status(500).send('Not a valid id!')
         });
     },
 
