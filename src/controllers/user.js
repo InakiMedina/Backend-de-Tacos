@@ -7,7 +7,7 @@ module.exports = {
         try{
             
             let user = {
-                firstName : req.body.firstname,
+                firstName : req.body.firstName,
                 lastName : req.body.lastName,
                 email : req.body.email,
                 password: req.body.password,
