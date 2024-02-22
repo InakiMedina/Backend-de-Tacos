@@ -1,0 +1,2 @@
+PORT = 3000
+DB_URL = mongodb+srv://cristian:uUEaCW7l5ixcJ1Ot@cluster0.s3wxvyc.mongodb.net/SoftRestaurant
