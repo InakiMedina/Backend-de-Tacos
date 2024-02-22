@@ -12,8 +12,19 @@ const products = require('./products')
 //    res.sendFile(url);
 // });
 
+/**
+ * @swagger
+ * /:
+ *   get:
+ *     summary: HeartBeat route
+ *     description: Always returns HTTP 200, it is a healthcheck for the app
+ *     responses:
+ *      200:
+ *          description: OK
+ *          content:
+*/
 router.get('/', (req, res) => {
-    res.send('Hello from the root route!');
+    res.send({msg: 'Hello from the root route!'});
 });
 
 router.use('', express.json());
