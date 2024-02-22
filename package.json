@@ -1,0 +1,25 @@
+{
+  "name": "backend-de-tacos",
+  "version": "1.0.0",
+  "description": "Backend de Tacos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InakiMedina/Backend-de-Tacos.git"
+  },
+  "keywords": [
+    "Tacos",
+    "Proyect",
+    "Backend",
+    "Express"
+  ],
+  "author": "ISC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InakiMedina/Backend-de-Tacos/issues"
+  },
+  "homepage": "https://github.com/InakiMedina/Backend-de-Tacos#readme"
+}
