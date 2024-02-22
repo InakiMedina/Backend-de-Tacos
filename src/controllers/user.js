@@ -2,7 +2,7 @@ const userModel = require('../models/user')
 
 module.exports = {
 
-    list: async(req,res) => {
+    getUsers: async(req,res) => {
         try{
             userModel.find({}).lean().then(response =>{
                 res.send(response)   
@@ -14,7 +14,6 @@ module.exports = {
     },
 
     createUser : async(req,res) => {
-        console.log("here");
         try{
             
             let user = {
@@ -36,6 +35,17 @@ module.exports = {
         catch(err){
             return err
         } 
+    },
+    getUser : async(req,res) => {
+        try{
+            userModel.find({_id: req.params.id}).lean().then(response =>{
+                res.send(response)   
+            })
+        }
+        catch(err){
+            res.send(err)
+        }
+
     }
 
 
