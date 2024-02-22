@@ -4,7 +4,8 @@
   "description": "Backend de Tacos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon .",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/InakiMedina/Backend-de-Tacos/issues"
   },
-  "homepage": "https://github.com/InakiMedina/Backend-de-Tacos#readme"
+  "homepage": "https://github.com/InakiMedina/Backend-de-Tacos#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.3"
+  }
 }
