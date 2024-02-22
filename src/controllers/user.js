@@ -2,6 +2,17 @@ const userModel = require('../models/user')
 
 module.exports = {
 
+    list: async(req,res) => {
+        try{
+            userModel.find({}).lean().then(response =>{
+                res.send(response)   
+            })
+        }
+        catch(err){
+            res.status(500).send('error listing user',err)
+        }
+    },
+
     createUser : async(req,res) => {
         console.log("here");
         try{
@@ -24,8 +35,7 @@ module.exports = {
         }
         catch(err){
             return err
-        }
-        
+        } 
     }
 
 
