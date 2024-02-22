@@ -1,6 +1,6 @@
 const express = require('express');
 
-//const router = require('./src/routes');
+const router = require('./src/routes');
 
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
@@ -16,7 +16,7 @@ app.use(cors());
 
 const port = process.env.PORT || 3000;
 
-//app.use(router);
+app.use(router);
 
 //Connect to MongoDB
 mongoose.connect(process.env.DB_URL, {
