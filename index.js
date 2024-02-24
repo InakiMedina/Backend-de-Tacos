@@ -20,7 +20,8 @@ const swaggerDefinition = {
         url: 'http://localhost:3000',
         description:'Development server'
     }
-  ]
+  ],
+  components: {}
 };
 
 const options = {
