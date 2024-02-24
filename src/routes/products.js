@@ -1,11 +1,6 @@
 const router = require('express').Router();
 const controller = require('../controllers/products_controller.js'); // Controller
 
-// Existing route
-router.get('', controller.GetProducts);
-router.get('/:id', controller.GetProduct);
-router.delete('/:id', controller.DeleteProduct);
-
 /**
  * @swagger
  * /products/product:
@@ -22,10 +17,16 @@ router.delete('/:id', controller.DeleteProduct);
  *       201:
  *         description: Product created successfully.
  */
+
+// Existing route
+router.get('', controller.GetProducts);
 router.post('', controller.createProduct);
+
 
 // Route for updating an existing product
 // Assuming product ID is passed as a URL parameter
+router.get('/:id', controller.GetProduct);
+router.delete('/:id', controller.DeleteProduct);
 router.put('/:id', controller.updateProduct);
 
 module.exports = router;
