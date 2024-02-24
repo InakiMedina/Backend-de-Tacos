@@ -2,9 +2,13 @@ const router = require('express').Router();
 const controller = require('../controllers/products_controller.js'); // Controller
 /**
  * @swagger
+ * tags: 
+ *   name: Products
+ *   description: The Products API
  * /products:
  *   get:
  *     summary: Retrieve all products
+ *     tags: [Products]
  *     description: Fetch a list of all products from the database.
  *     responses:
  *       200:
@@ -41,6 +45,7 @@ router.get('', controller.GetProducts);
  * /products/{id}:
  *   get:
  *     summary: Retrieve a single product by ID
+ *     tags: [Products]
  *     description: Fetch a single product from the database by its unique ID.
  *     parameters:
  *     - in: path
@@ -82,6 +87,7 @@ router.get('/:id', controller.GetProduct);
  * /products/{id}:
  *   delete:
  *     summary: Delete a product by ID
+ *     tags: [Products]
  *     description: Deletes a single product from the database by its unique ID.
  *     parameters:
  *     - in: path
@@ -102,6 +108,7 @@ router.delete('/:id', controller.DeleteProduct);
  * /products:
  *   post:
  *     summary: Create a new product
+ *     tags: [Products]
  *     description: Adds a new product to the database.
  *     requestBody:
  *       required: true
@@ -113,8 +120,11 @@ router.delete('/:id', controller.DeleteProduct);
  *               name:
  *                 type: string
  *                 description: Name of the product.
+ *               img:
+ *                  type: string
+ *                  description: URL of a product image.
  *               unitPrice:
- *                 type: string
+ *                 type: number
  *                 description: Price per unit of the product, stored as a Decimal128 in MongoDB.
  *               category:
  *                 type: object
@@ -122,6 +132,11 @@ router.delete('/:id', controller.DeleteProduct);
  *                   name:
  *                     type: string
  *                     description: Category of the product.
+ *     responses:
+ *       201:
+ *         description: Product created successfully.
+ *       404:
+ *         description: Product not found.
  */
 router.post('', controller.createProduct);
 
@@ -130,6 +145,7 @@ router.post('', controller.createProduct);
  * /products/{id}:
  *   put:
  *     summary: Update an existing product
+ *     tags: [Products]
  *     description: Updates details of an existing product by its ID.
  *     parameters:
  *     - in: path
@@ -149,14 +165,22 @@ router.post('', controller.createProduct);
  *                 type: string
  *                 description: Name of the product.
  *               unitPrice:
- *                 type: string
+ *                 type: number
  *                 description: Price per unit of the product, stored as a Decimal128 in MongoDB.
+ *               img:
+ *                  type: string
+ *                  description: Product image URL
  *               category:
  *                 type: object
  *                 properties:
  *                   name:
  *                     type: string
  *                     description: Category of the product.
+ *     responses:
+ *       200:
+ *         description: Product updated successfully.
+ *       404:
+ *         description: Product not found.
  */
 
 router.put('/:id', controller.updateProduct);

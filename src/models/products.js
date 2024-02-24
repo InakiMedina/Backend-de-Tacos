@@ -19,6 +19,9 @@ const products = new Schema({
     unitPrice: {
         type: Number
     },
+    img: {
+        type: String
+    },
     category: {
         type: category,
         default: {}

@@ -66,7 +66,7 @@ module.exports = {
       // Create a new product with the request body
       const newProduct = new model(req.body);
       const savedProduct = await newProduct.save();
-      res.status(201).send(savedProduct);
+      return res.status(201).json(savedProduct);
     } catch (error) {
       console.error(error);
       res.status(400).send(error.message);
