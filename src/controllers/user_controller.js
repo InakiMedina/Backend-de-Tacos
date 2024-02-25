@@ -46,6 +46,36 @@ module.exports = {
             res.send(err)
         }
 
+    },
+    updateUser: async (req, res) => {
+        try {
+            let userId = req.params.id;
+            let userInfo = req.body;
+
+            userModel.findByIdAndUpdate(userId, userInfo, { new: true }).then(updatedUser => {
+                res.send(updatedUser);
+            }).catch(err => {
+                console.error(err);
+                res.status(500).send("Error updating user");
+            });
+        } catch (err) {
+            res.status(500).send(err);
+        }
+    },
+
+    deleteUser: async (req, res) => {
+        try {
+            let userId = req.params.id;
+
+            userModel.findByIdAndDelete(userId).then(() => {
+                res.send("User deleted successfully");
+            }).catch(err => {
+                console.error(err);
+                res.status(500).send("Error deleting user");
+            });
+        } catch (err) {
+            res.status(500).send(err);
+        }
     }
 
 

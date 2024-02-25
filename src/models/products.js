@@ -16,6 +16,9 @@ const products = new Schema({
     unitPrice: {
         type: Number
     },
+    img: {
+        type: String
+    },
     category: {
         type: mongoose.Types.ObjectId,
         ref: 'category'
