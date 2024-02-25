@@ -17,7 +17,10 @@ const products = new Schema({
         type: String
     },
     unitPrice: {
-        type: Decimal128
+        type: Number
+    },
+    img: {
+        type: String
     },
     category: {
         type: category,
