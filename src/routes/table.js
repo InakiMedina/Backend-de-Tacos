@@ -7,3 +7,5 @@ router.post('/', createTable);
 router.put('/:id', updateTable);
 router.delete('/:id', deleteTable);
 router.put('/waiter/:id', assignWaiter);
+
+module.exports = router
