@@ -8,12 +8,6 @@ const user = require('./user')
 // const path = require('path');  //NOt installed yet, maybe will use?
 
 
-
-// router.get('', (req,res) => {
-//     const url = path.join(__dirname, '..', '..', 'public', 'index.html')
-//    res.sendFile(url);
-// });
-
 /**
  * @swagger
  * /:
