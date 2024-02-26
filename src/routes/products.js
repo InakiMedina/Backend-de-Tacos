@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const controller = require('../controllers/products_controller.js'); // Controller
+
 /**
  * @swagger
  * tags: 
@@ -40,6 +41,8 @@ const controller = require('../controllers/products_controller.js'); // Controll
  *                         description: Category of the product.
  */
 router.get('', controller.GetProducts);
+
+
 /**
  * @swagger
  * /products/{id}:
@@ -82,6 +85,8 @@ router.get('', controller.GetProducts);
  *                       description: Category of the product.
  */
 router.get('/:id', controller.GetProduct);
+
+
 /**
  * @swagger
  * /products/{id}:
@@ -103,6 +108,8 @@ router.get('/:id', controller.GetProduct);
  *         description: Product not found.
  */
 router.delete('/:id', controller.DeleteProduct);
+
+
 /**
  * @swagger
  * /products:
@@ -138,6 +145,8 @@ router.delete('/:id', controller.DeleteProduct);
  *       404:
  *         description: Product not found.
  */
+// Existing route
+router.get('', controller.GetProducts);
 router.post('', controller.createProduct);
 
 /**
@@ -182,7 +191,6 @@ router.post('', controller.createProduct);
  *       404:
  *         description: Product not found.
  */
-
 router.put('/:id', controller.updateProduct);
 
 module.exports = router;
