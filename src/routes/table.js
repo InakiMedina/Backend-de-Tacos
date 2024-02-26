@@ -6,7 +6,7 @@ const {getTables, getTable, createTable, updateTable, deleteTable, assignWaiter}
  * tags: 
  *   name: Table
  *   description: The Table API
- * /tables:
+ * /table:
  *   get:
  *     summary: Get a list of all tables
  *     tags: [Table]
@@ -34,7 +34,7 @@ router.get('/', getTables);
 
 /**
  * @swagger
- * /tables/{id}:
+ * /table/{id}:
  *   get:
  *     summary: Get a specific table by its ID
  *     tags: [Table]
@@ -65,7 +65,7 @@ router.get('/:id', getTable);
 
 /**
  * @swagger
- * /tables:
+ * /table:
  *   post:
  *     summary: Create a new table
  *     tags: [Table]
@@ -95,7 +95,7 @@ router.post('/', createTable);
 
 /**
  * @swagger
- * /tables/{id}:
+ * /table/{id}:
  *   put:
  *     summary: Update a table's details
  *     tags: [Table]
@@ -128,7 +128,7 @@ router.put('/:id', updateTable);
 
 /**
  * @swagger
- * /tables/{id}:
+ * /table/{id}:
  *   delete:
  *     summary: Delete a table
  *     tags: [Table]
@@ -148,7 +148,7 @@ router.delete('/:id', deleteTable);
 
 /**
  * @swagger
- * /tables/waiter/{id}:
+ * /table/waiter/{id}:
  *   put:
  *     summary: Assign a waiter to a table
  *     tags: [Table]
