@@ -6,7 +6,8 @@ const {
 const category = new Schema({
     //Id default by mongoDB
     name: {
-        type: String
+        type: String,
+        required: true
     }
 });
 
