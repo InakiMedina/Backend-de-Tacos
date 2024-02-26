@@ -25,7 +25,7 @@ class ordersController {
             table: req.body.table,
             date: req.body.date,
             customerCount: req.body.customerCount,
-            //orderProducts: req.body.orderProducts,
+            orderProducts: req.body.orderProducts,
             total: req.body.total,
             type: req.body.type,
             status: req.body.status
