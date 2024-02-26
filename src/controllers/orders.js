@@ -109,3 +109,5 @@ class ordersController {
 
     };
 }
+
+module.exports = new ordersController();
