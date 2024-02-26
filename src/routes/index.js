@@ -7,7 +7,7 @@ const category = require('./category');
 const products = require('./products');
 const table = require('./table');
 const user = require('./user');
-
+const chat = require('./chat');
 // const path = require('path');  //NOt installed yet, maybe will use?
 
 
@@ -21,9 +21,11 @@ const user = require('./user');
  *      200:
  *          description: OK
  *          content:
-*/
+ */
 router.get('/', (req, res) => {
-    res.send({msg: 'Hello from the root route!'});
+    res.send({
+        msg: 'Hello from the root route!'
+    });
 });
 
 router.use('', express.json());
@@ -32,4 +34,5 @@ router.use('/products', products);
 router.use('/orders', orders);
 router.use('/table', table);
 router.use('/user', user);
+router.use('/chat', chat)
 module.exports = router;
