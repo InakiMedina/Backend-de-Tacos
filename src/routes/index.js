@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-// const orders = require('./orders');
+const orders = require('./orders');
 const category = require('./category');
 const products = require('./products');
 const table = require('./table');
@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 router.use('', express.json());
 router.use('/category', category);
 router.use('/products', products);
-// router.use('/orders', orders);
+router.use('/orders', orders);
 router.use('/table', table);
 router.use('/user', user);
 module.exports = router;
