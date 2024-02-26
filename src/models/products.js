@@ -1,15 +1,12 @@
 const {
     Schema,
     model,
-    Decimal128
+    ObjectId,
 } = require('mongoose');
+const mongoose = require('mongoose');
 
-const category = new Schema({
-    //Id default by mongoDB
-    name: {
-        type: String
-    }
-});
+
+const category = require("./category")
 
 const products = new Schema({
     //Id default by mongoDB
@@ -23,8 +20,8 @@ const products = new Schema({
         type: String
     },
     category: {
-        type: category,
-        default: {}
+        type: mongoose.Types.ObjectId,
+        ref: 'category'
     }
 });
 
