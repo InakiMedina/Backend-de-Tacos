@@ -35,7 +35,39 @@ router.use('/products', products);
 router.use('/orders', orders);
 router.use('/table', table);
 router.use('/user', user);
-
+/**
+ * @swagger
+ * tags: 
+ *   name: Chat
+ *   description: The Chat API
+ * /message:
+ *   get:
+ *     summary: Generate random lorem ipsum text
+ *     tags: [Chat]
+ *     description: Generates random lorem ipsum text based on the number of paragraphs and sentences per paragraph specified in the request body.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               num:
+ *                 type: integer
+ *                 description: Number of paragraphs and sentences per paragraph to generate.
+ *             example:
+ *               num: 3
+ *     responses:
+ *       200:
+ *         description: Randomly generated lorem ipsum text
+ *         content:
+ *           text/plain:
+ *             schema:
+ *               type: string
+ *               example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+ *       400:
+ *         description: Bad request - invalid parameters
+ */
 router.get('/messege', messege_controller.sendResponse);
 
 
