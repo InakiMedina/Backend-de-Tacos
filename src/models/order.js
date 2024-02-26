@@ -6,7 +6,7 @@ const orders = new Schema({
     table: {type: Schema.Types.ObjectId, ref: "tables", required: true},
     date: {type: Date, required: true},
     customerCount: {type: Number, required: true},
-     // orderProducts: {type: [OrderProduct], required: true},
+    orderProducts: [{type: Schema.Types.ObjectId, ref: "Products"}],
     total: {type: Number, required: true},
     type: {type: String, required: true},
     status: {type: String, required: true},
