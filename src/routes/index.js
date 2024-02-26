@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+const messege_controller = require('./../controllers/messege_controller');
+
+
 
 const orders = require('./orders');
 const category = require('./category');
@@ -32,4 +35,8 @@ router.use('/products', products);
 router.use('/orders', orders);
 router.use('/table', table);
 router.use('/user', user);
+
+router.get('/messege', messege_controller.sendResponse);
+
+
 module.exports = router;

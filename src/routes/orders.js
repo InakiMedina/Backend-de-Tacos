@@ -99,7 +99,6 @@ router.get('', orderController.getOrders);
  */
 router.get('/:id', orderController.getOrder);
 
-
 router.put('/:id', orderController.updateOrder);
 router.put('/:id/splitcount', orderController.splitCount);
 router.put('/:id/cancelproductorder/:productId', orderController.cancelOrderProduct);
